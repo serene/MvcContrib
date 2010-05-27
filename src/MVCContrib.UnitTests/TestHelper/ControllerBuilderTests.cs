@@ -187,6 +187,14 @@ namespace MvcContrib.UnitTests.TestHelper
 		}
 
 		[Test]
+		public void ServerVariablesShouldBeInitialized()
+		{
+			var controller = builder.CreateController<TestHelperController>();
+
+            Assert.IsNotNull(controller.Request.ServerVariables);
+		}
+
+		[Test]
 		public void CacheIsAvailable()
 		{
 			var builder = new TestControllerBuilder();

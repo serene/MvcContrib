@@ -140,6 +140,7 @@ namespace MvcContrib.TestHelper
 			SetupResult.For(request.ApplicationPath).Do((Func<string>)(() => ApplicationPath));
 			SetupResult.For(request.PathInfo).Do((Func<string>)(() => PathInfo));
 			SetupResult.For(request.RawUrl).Do((Func<string>)(() => RawUrl));
+		    SetupResult.For(request.ServerVariables).Return(new NameValueCollection());
 			SetupResult.For(response.Status).PropertyBehavior();
 			SetupResult.For(HttpContext.User).PropertyBehavior();
 
